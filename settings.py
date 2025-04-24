@@ -6,14 +6,15 @@ game = True
 level_run = True
 
 
-MaBlock = {
-            "Decor":[],
-            "Collision":[]
+MapBlock = {
+            "Decor":sprite.Group(),
+            "Collision":sprite.Group()
             }
 
 
-
-
+player_pos = [0,0]
+player_size = [0,0]
+coin_list = sprite.Group()
 
 
 

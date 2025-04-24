@@ -5,8 +5,8 @@ import gameSprite
 class Player(gameSprite.GameSprite):
     def __init__(self, image_right, image_up , x, y, width, height, speed, *groups):
         super().__init__(image_right, x, y, width, height, speed, *groups)
-        self.image_right = transform.scale(image.load(image_right),(width),(height))
-        self.image_up = transform.scale(image.load(image_up),(width),(height))
+        self.image_right = transform.scale(image.load(image_right),(width,height))
+        self.image_up = transform.scale(image.load(image_up),(width,height))
         
 
         self.xMove = 0
@@ -40,14 +40,14 @@ class Player(gameSprite.GameSprite):
         self.rect.y += self.yMove
 
     def collide(self):
-        for block in settings.MaBlock["Collision"]:
+        for block in settings.MapBlock["Collision"]:
             if sprite.collide_rect(self, block):
                 if self.xMove > 0:
                     self.rect.right = block.rect.left
                     self.xMove = 0
                     self.isMove = True 
 
-                if self.xMove > 0:
+                if self.xMove < 0:
                     self.rect.left = block.rect.right
                     self.xMove = 0
                     self.isMove = True 
@@ -57,7 +57,7 @@ class Player(gameSprite.GameSprite):
                     self.yMove = 0
                     self.isMove = True 
 
-                if self.yMove > 0:
+                if self.yMove < 0:
                     self.rect.top = block.rect.bottom
                     self.yMove = 0
                     self.isMove = True 
@@ -69,3 +69,4 @@ class Player(gameSprite.GameSprite):
         
         
         return super().update(*args, **kwargs)
+
