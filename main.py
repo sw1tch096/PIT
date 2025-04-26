@@ -8,6 +8,14 @@ import coin
 import map.create as mapCreate
 
 
+level = 0
+
+
+mapCreate.create_level(f"map/level/{settings.level_list[level]}.txt")
+
+
+
+
 
 mapCreate.create_level("map/level/1.txt")
 
@@ -50,12 +58,20 @@ while settings.game:
         list_coin = sprite.spritecollide(player_,settings.coin_list,True)
         for collide in list_coin:
             num_coin += 1
-
+            print (num_coin)
 
         if num_coin >= 6:
             settings.level_run = False 
     else:
-        mapCreate.create_level("map/level/1.txt")
+        level += 1
+        if level > len(settings.level_list)-1:
+            level = 0
+
+        settings.MapBlock["Collision"].empty
+        settings.MapBlock["Decor"].empty
+        settings.coin_list.empty()
+
+        mapCreate.create_level(f"map/level/{settings.level_list[level]}.txt")
 
         player_ = player.Player("image/player/фчффыв.png", "image/player/фчффыв.png",
                         settings.player_pos[0],settings.player_pos[1],

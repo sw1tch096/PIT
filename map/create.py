@@ -45,21 +45,21 @@ def create_level(path_level:str)  -> dict["Decor":sprite.Group, "Collision":spri
                 elif symbol == "┐":
                     block = gameSprite.GameSprite("image/tilles/tile_0002.png",
                                                 x, y, width, height, 0)
-                    mapDecor.add(block)
+                    mapCollision.add(block)
                 elif symbol == "└":
                     block = gameSprite.GameSprite("image/tilles/tile_0010.png",
                                                 x, y, width, height, 0)
-                    mapDecor.add(block)
+                    mapCollision.add(block)
                 
                 elif symbol == "┘":
                     block = gameSprite.GameSprite("image/tilles/tile_0012.png",
                                                 x, y, width, height, 0)
-                    mapDecor.add(block)
+                    mapCollision.add(block)
                 
                 elif symbol == "┌":
                     block = gameSprite.GameSprite("image/tilles/tile_0000.png",
                                                 x, y, width, height, 0)
-                    mapDecor.add(block)
+                    mapCollision.add(block)
                 elif symbol == "░":
                     block = gameSprite.GameSprite("image/tilles/tile_00014.png",
                                                 x, y, width, height, 0)

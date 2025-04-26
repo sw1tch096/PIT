@@ -6,6 +6,12 @@ game = True
 level_run = True
 
 
+level_list = ("1","2","3")
+
+
+
+
+
 MapBlock = {
             "Decor":sprite.Group(),
             "Collision":sprite.Group()
